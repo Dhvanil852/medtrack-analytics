@@ -1,0 +1,22 @@
+# config.yaml
+data:
+  raw: data/raw/patients_raw.csv
+  processed: data/processed/patients_clean.csv
+  external: data/external/
+  
+generator:
+  num_patients: 1000
+  seed: 42
+
+features:
+  numerical: ["age", "bmi", "blood_glucose", "hba1c"]
+  categorical: ["gender", "diagnosis"]
+  datetime: ["visit_date"]
+
+model:
+  target: "diagnosis"
+  test_size: 0.2
+  random_state: 42
+
+dashboard:
+  title: "MedTrack Analytics Dashboard"
